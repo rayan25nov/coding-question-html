@@ -1,0 +1,55 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Addition of Number</title>
+
+    <style>
+      h5 {
+        text-align: center;
+        margin-top: 30vh;
+        font-size: 70px;
+      }
+
+      .form {
+        text-align: center;
+        padding: auto;
+      }
+
+      .form > div {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form">
+      <div>
+        <input type="number" id="num1" />
+      </div>
+
+      <div>
+        <input id="num2" type="number" />
+      </div>
+
+      <div>
+        <button style="background-color: black; color: blanchedalmond" id="btn">
+          Add
+        </button>
+      </div>
+    </div>
+
+    <h5 id="result">0</h5>
+
+    <script>
+      function add() {
+        let x = Number(document.getElementById("num1").value);
+        let y = Number(document.getElementById("num2").value);
+        let res = document.getElementById("result");
+
+        res.innerHTML = x + y;
+      }
+      document.getElementById("btn").addEventListener("click", add);
+    </script>
+  </body>
+</html>

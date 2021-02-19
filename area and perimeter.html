@@ -1,0 +1,80 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Area and Perimeter</title>
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  </head>
+  <body>
+    <div class="row container">
+      <div class="col s5">
+        <div>
+          <input type="text" id="length1" />
+          <label for="length1">metre</label>
+        </div>
+        <br />
+        <div>
+          <input type="text" id="width1" />
+          <label for="width1">metre</label>
+        </div>
+        <br />
+
+        <button class="btn indigo" onclick="area()">Calc Area</button>
+        <a href="#" class="btn waves-light" onclick="reset1()">Reset</a>
+        <h5 id="area">0</h5>
+        <label for="area">metre square</label>
+      </div>
+      <div class="col s5 offset-s2">
+        <div>
+          <input type="text" id="length2" />
+          <label for="length2">metre</label>
+        </div>
+        <br />
+        <div>
+          <input type="text" id="width2" />
+          <label for="width2">metre</label>
+        </div>
+        <br />
+
+        <button class="btn indigo" onclick="perimeter()">Perimeter</button>
+        <a href="#" class="btn waves-light" onclick="reset2()">Reset</a>
+        <h5 id="perimeter">0</h5>
+        <label for="perimeter">metre </label>
+      </div>
+    </div>
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script>
+      function area() {
+        let x = document.getElementById("length1").value;
+        let y = document.getElementById("width1").value;
+        let z = document.getElementById("area");
+        z.innerHTML = x * y;
+      }
+      function perimeter() {
+        let a = Number(document.getElementById("length2").value);
+        let b = Number(document.getElementById("width2").value);
+        let c = document.getElementById("perimeter");
+        c.innerHTML = 2 * (a + b);
+      }
+      function reset1() {
+        document.getElementById("length1").value = "";
+        document.getElementById("width1").value = "";
+        document.getElementById("area").innerHTML = 0;
+      }
+      function reset2() {
+        document.getElementById("length2").value = "";
+        document.getElementById("width2").value = "";
+        document.getElementById("perimeter").innerHTML = 0;
+      }
+    </script>
+  </body>
+</html>
