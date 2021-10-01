@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Celsius to farenhite</title>
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <style>
+      .button{
+        text-align: center;
+        margin-top: 70px;
+      }
+        .col{
+          margin-top: 50px;
+        }
+      .box{
+        height: 75px;
+        background-color: #f3f3f3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container row">
+      <div class="col s5">
+
+        <input type="text" id="celsius">
+        <label for="celsius">Degree Celsius</label>
+      </div>
+      <div class="col s5 box offset-s2">
+        <p id="farenhite"></p>
+        <label for="farenhite">Degree farenhite</label>
+      </div>
+    </div>
+    <div class="container button">
+      <a href="#" class="btn" onclick="convert()">Convert</a>
+      <a href="#" class="btn" onclick="reset()">Reset</a>
+    </div>
+    <script>
+      function convert(){
+        let a= document.getElementById("celsius")
+        let b =document.getElementById("farenhite")
+        b.innerHTML=(a.value*1.8)+32
+        
+      }
+      function reset(){
+        let a= document.getElementById("celsius").value=""
+        let b =document.getElementById("farenhite").innerHTML=""
+        
+      }
+    </script>
+     <!--JavaScript at end of body for optimized loading-->
+     <script type="text/javascript" src="js/materialize.min.js"></script>
+    </body>
+  </body>
+</html>

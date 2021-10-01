@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Soloving Quadratic Equation</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <style>
+        .box{
+            margin-top: 50px;
+            height: 140px;
+            background-color: #f4f4f4;
+        }
+        .pic{
+            text-align: center;
+        }
+        
+    </style>
+  </head>
+  <body>
+      <div class="container row">
+          <div class="col s5">
+              <input type="number" id="input1">
+              <label for="input1">a</label>
+              <input type="number" id="input2">
+              <label for="input2">b</label>
+              <input type="number" id="input3">
+              <label for="input3">c</label>
+          </div>
+          <div class="col s5 offset-s2 box">
+              <p id="output"></p>
+          </div>
+
+      </div>
+      <div class="container row">
+          <div class="col s7">
+              <a href="#" class="btn" onclick="solve()">Solve Quadratic Equation</a>
+          </div>
+          <div class="col s3 offset-s2">
+              <a href="#" class="btn" onclick="reset()">Reset</a>
+          </div>
+      </div>
+      <div class="container pic">
+          <img src="Quadratic Equation.png" alt="tips">
+      </div>
+<script>
+    function solve(){
+        let a=document.getElementById("input1").value;
+        let b=document.getElementById("input2").value;
+        let c=document.getElementById("input3").value;
+        let d =document.getElementById("output");
+        let e= (-b + (b**2 - 4*a*c)**0.5) / 2*a;
+        let f =(-b - (b**2 - 4*a*c)**0.5) / 2*a;
+        if(b*b < 4*a*c){
+            d.innerHTML=`Roots of quadratic equation are complex number and they are imaginary!`
+        }else if(b*b == 4*a*c){
+            d.innerHTML=`${e} and ${f} are the roots of quadratic equation, and they are real and equal!`
+            
+        }else if(b**2 > 4*a*c){
+            d.innerHTML=`${e} and ${f} are the roots of quadratic equation, and they are real and different!`
+
+        }
+       
+    }
+    function reset(){
+        document.getElementById("input1").value="";
+        document.getElementById("input2").value="";
+        document.getElementById("input3").value="";
+        document.getElementById("output").innerHTML='';
+    }
+</script>
+
+</script>
+<!--JavaScript at end of body for optimized loading-->
+<script type="text/javascript" src="js/materialize.min.js"></script>
+  </body>
+</html>

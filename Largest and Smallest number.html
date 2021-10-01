@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Largest And Smallest Number</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <style>
+        .col{
+          margin-top: 75px;
+        }
+        .box{
+        height: 150px;
+        background-color: #f3f3f3;
+        }
+        .butn{
+            height: 75px;
+        }
+    </style>
+  </head>
+  <body>
+      <div class="container row">
+          <div class="col s5">
+              <input type="number" id="num1">
+              <input type="number" id="num2">
+              <input type="number" id="num3">
+              <label for="num">Input Numbers</label>
+          </div>
+          <div class="col s5 box offset-s2">
+              <p id="out1"></p>
+              <p id="out2"></p>
+              
+          </div>
+          
+        </div>
+        <div class="container row button">
+            <div class="col s5">
+            
+            <a href="#" class="btn butn" onclick="largestAndSmallest1()">Find Largest And Smallest Number</a>
+            </div>
+            <div class="col s5 offset-s2">
+              <a href="#" class="btn" onclick="reset()">reset</a>
+            </div>
+            
+        </div>
+      <script>
+        // Using Math operator max and min...
+          function largestAndSmallest1(){
+              let a=document.getElementById('num1').value;
+              let b=document.getElementById('num2').value;
+              let c=document.getElementById('num3').value;
+              let d=document.getElementById('out1');
+              let e=document.getElementById("out2");
+              let x =Math.max(a, b, c);
+              let y=Math.min(a,b,c)
+              
+                d.innerHTML=`${x} is the Largest Value!`
+              
+              
+                e.innerHTML=`${y} is the Smallest value!`
+              
+          }
+
+          // Using If Else Statement...
+
+          function largestAndSmallest2(){
+              let a=document.getElementById('num1').value;
+              let b=document.getElementById('num2').value;
+              let c=document.getElementById('num3').value;
+              let d=document.getElementById('out1');
+              let e=document.getElementById("out2");
+              if(a<=b && a<=c){
+                e.innerHTML=`${a} is the Smallest Value!`
+              }else if(b<=a && b<=c){
+                e.innerHTML=`${b} is the  Smallest Value!`
+              }else {
+                e.innerHTML=`${c} is the Smallest Value!`
+              }              
+              if(a>=b && a>=c){
+                d.innerHTML=a + " is the Largest Value!"
+              }else if(b>=a && b>=c){
+                d.innerHTML=b + " is the Largest Value!"
+              }else{
+                d.innerHTML=c + " is the Largest Value!"
+              }              
+          }
+        
+          function reset(){
+            document.getElementById('num1').value='';
+            document.getElementById('num2').value='';
+            document.getElementById('num3').value='';
+            document.getElementById('out1').innerHTML='';
+            document.getElementById('out2').innerHTML='';
+          }
+          
+      </script>
+  </script>
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+</body>
+</html>

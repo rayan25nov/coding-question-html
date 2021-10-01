@@ -19,17 +19,45 @@
         <input type="text" name="" id="decimal1" />
         <input type="text" name="" id="decimal2" />
         <input type="text" name="" id="decimal3" />
-        <a href="#" class="btn">sum</a>
-        <h5>0</h5>
+        <a href="#" class="btn" onclick="sum()">sum</a>
+        <a href="#" class="btn waves-light" onclick="reset1()">reset</a>
+        <h5 id="sum">0</h5>
       </div>
       <div class="col s5 offset-s2">
-        <input type="text" name="" id="" />
-        <input type="text" name="" id="" />
-        <input type="text" name="" id="" />
-        <a href="#" class="btn">average</a>
-        <h5>0</h5>
+        <input type="text" name="" id="decimal4" />
+        <input type="text" name="" id="decimal5" />
+        <input type="text" name="" id="decimal6" />
+        <a href="#" class="btn" onclick="average()">average</a>
+        <a href="#" class="btn" onclick="reset2()">reset</a>
+        <h5 id="average">0</h5>
       </div>
     </div>
+    <script>
+      function sum() {
+        let x = Number(document.getElementById("decimal1").value);
+        let y = Number(document.getElementById("decimal2").value);
+        let z = Number(document.getElementById("decimal3").value);
+        document.getElementById("sum").innerHTML = x + y + z;
+      }
+      function average() {
+        let a = Number(document.getElementById("decimal4").value);
+        let b = Number(document.getElementById("decimal5").value);
+        let c = Number(document.getElementById("decimal6").value);
+        document.getElementById("average").innerHTML = (a + b + c) / 3;
+      }
+      function reset1() {
+        document.getElementById("decimal1").value = "";
+        document.getElementById("decimal2").value = "";
+        document.getElementById("decimal3").value = "";
+        document.getElementById("sum").innerHTML = 0;
+      }
+      function reset2() {
+        document.getElementById("decimal4").value = "";
+        document.getElementById("decimal5").value = "";
+        document.getElementById("decimal6").value = "";
+        document.getElementById("average").innerHTML = 0;
+      }
+    </script>
     <!--JavaScript at end of body for optimized loading-->
     <script type="text/javascript" src="js/materialize.min.js"></script>
   </body>
